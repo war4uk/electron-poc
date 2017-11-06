@@ -1,0 +1,11 @@
+{
+  "project-one": {
+    "externalUrl": "http://localhost:4200"
+  },
+  "project-two": {
+    "internalUrl": "index.html"
+  },
+  "project-three": {
+    "internalUrl": "index.html"
+  }
+}

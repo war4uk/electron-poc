@@ -1,0 +1,6 @@
+<h2>PROJECT TWO</h2>
+
+<script>
+  var bc = new BroadcastChannel('preview:compiled');
+  setTimeout(() => bc.postMessage('Some data from project two'), 3000);
+</script>
