@@ -5,7 +5,7 @@
     "description": "My Electron application description",
     "main": "src/index.js",
     "scripts": {
-        "serve-all": "cd src/project-one && npm install && ng build && cd ../.. && concurrently --kill-others \"npm run start\" \"cd src && http-server",
+        "serve-all": "cd src/project-one && npm install && ng build && cd ../.. && concurrently --kill-others \"npm run start\" \"cd src && http-server -p 8974 \"",
         "start": "electron-forge start",
         "package": "electron-forge package",
         "make": "electron-forge make",
