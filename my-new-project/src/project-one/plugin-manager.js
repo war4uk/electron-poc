@@ -1,18 +1,24 @@
-let cb = function () { };
+const pluginConfiguration = require('./plugin.config.json');
+let globalBroadcastChannel;
 
-exports.subscribe = function subscribe(callBack) {
-  cb = callBack;
-};
+let internalBroadcastChannel = new BroadcastChannel(pluginConfiguration.pluginSpecificChannelId);
 
+internalBroadcastChannel.onmessage = function onInternalBroadcastMessage(message) {
+    if (globalBroadcastChannel) {
+        globalBroadcastChannel.postMessage(message.data);
+    }
+}
 
-exports.sendEvent = function sendEvent(event) {
-  return true;
-};
+exports.prettyName = 'Package One';
 
-exports.run = function run() {
-  alert(5000);
+exports.run = function run(broadcastChannelId) {
+    globalBroadcastChannel = new BroadcastChannel(broadcastChannelId);
+
+    globalBroadcastChannel.onmessage = function(message) {
+        console.log('Project one got event from global channel:', message.data);
+    };
 };
 
 exports.getRootUrl = function getRootUrl() {
-  return "http://localhost:4200";
+    return './project-one/dist/index.html';
 };

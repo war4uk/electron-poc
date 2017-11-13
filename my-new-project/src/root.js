@@ -1,3 +1,3 @@
-import './plugin-manager';
+require('./plugin-manager');
 
 alert('123');
