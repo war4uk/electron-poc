@@ -2,5 +2,5 @@
 
 <script>
     var bc = new BroadcastChannel("unite:project-two:channel");
-    setTimeout(() => bc.postMessage('Some data from project two'), 3000);
+    setTimeout(() => bc.postMessage({test: 123123, test2: {t:1}}), 3000);
 </script>

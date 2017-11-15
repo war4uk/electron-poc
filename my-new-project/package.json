@@ -1,68 +1,74 @@
 {
-    "name": "my-new-project",
-    "productName": "my-new-project",
-    "version": "1.0.0",
-    "description": "My Electron application description",
-    "main": "src/index.js",
-    "scripts": {
-        "serve-all": "cd src/project-one && npm install && npm run build && cd ../.. && concurrently --kill-others \"npm run start\" \"cd src && http-server -p 8974 \"",
-        "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
-        "publish": "electron-forge publish",
-        "lint": "eslint src --color"
-    },
-    "keywords": [],
-    "author": "Warr",
-    "license": "MIT",
-    "config": {
-        "forge": {
-            "make_targets": {
-                "win32": [
-                    "squirrel"
-                ],
-                "darwin": [
-                    "zip"
-                ],
-                "linux": [
-                    "deb",
-                    "rpm"
-                ]
-            },
-            "electronPackagerConfig": {
-                "packageManager": "npm"
-            },
-            "electronWinstallerConfig": {
-                "name": "my_new_project"
-            },
-            "electronInstallerDebian": {},
-            "electronInstallerRedhat": {},
-            "github_repository": {
-                "owner": "",
-                "name": ""
-            },
-            "windowsStoreConfig": {
-                "packageName": "",
-                "name": "mynewproject"
-            }
-        }
-    },
-    "dependencies": {
-        "electron-compile": "^6.4.2",
-        "electron-squirrel-startup": "^1.0.0"
-    },
-    "devDependencies": {
-        "babel-plugin-transform-async-to-generator": "^6.24.1",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-react": "^6.24.1",
-        "concurrently": "^3.5.0",
-        "electron-forge": "^4.1.2",
-        "electron-prebuilt-compile": "1.7.9",
-        "eslint": "^3.19.0",
-        "eslint-config-airbnb": "^15.1.0",
-        "eslint-plugin-import": "^2.8.0",
-        "eslint-plugin-jsx-a11y": "^5.1.1",
-        "eslint-plugin-react": "^7.4.0",
-        "http-server": "^0.10.0"
+  "name": "my-new-project",
+  "productName": "my-new-project",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "serve-all": "cd src/project-one && npm install && npm run build && cd .. && browserify root.js > bundle.js &&  cd .. && concurrently --kill-others \"npm run start\" \"cd src && http-server -p 8974 \"",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color",
+    "browserify": "cd src && browserify root.js > bundle.js"
+  },
+  "keywords": [],
+  "author": "Warr",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "my_new_project"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "mynewproject"
+      }
     }
+  },
+  "dependencies": {
+    "base64-js": "^1.2.1",
+    "electron-compile": "^6.4.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "install": "^0.10.1",
+    "npm": "^5.5.1",
+    "text-encoding": "^0.6.4"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "browserify": "^14.5.0",
+    "concurrently": "^3.5.0",
+    "electron-forge": "^4.1.2",
+    "electron-prebuilt-compile": "1.7.9",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0",
+    "http-server": "^0.10.0"
+  }
 }
