@@ -4,7 +4,7 @@ import { BroadcastServiceBase } from '../broadcastModule/broadcastServiceBase';
 @Injectable()
 export class BroadcastService extends BroadcastServiceBase {
     constructor() {
-        super('first-module:channel', 'First module channel');
+        super('first-module:channel', "First module channel");
     }
 
     protected onInternalMessage(message: any): void {
