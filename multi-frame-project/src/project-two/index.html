@@ -1,0 +1,9 @@
+<h2>PROJECT TWO</h2>
+
+<script>
+    var bc = new BroadcastChannel("unite:project-two:channel");
+    var i = 0
+    setInterval(() => {
+        bc.postMessage('Data from project two #' + i++);
+    }, 3000);
+</script>

@@ -2,7 +2,7 @@ let internalBroadcastChannel = new BroadcastChannel("unite:project-three:channel
 
 internalBroadcastChannel.onmessage = function onInternalBroadcastMessage() {}
 
-exports.prettyName = 'Package Three';
+exports.prettyName = "Package Three";
 
 exports.uploadBlob = function(uint8Arr, fileId) {
     console.log('project three loaded file content result: ', arrayBufferToString(uint8Arr));
