@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="./angularApplication.js"></script>
+    </head>
+    <body ng-app="myModule">
+        <h1>Intermedia <img src="./assets/index.png" height="30px" width="30px"/> HostPilot</h1>
+        <div ng-controller="myController as vm">    
+            <input type="text" ng-model="vm.link" />
+            <button type="button" ng-click="vm.onLinkEntered()">Go</button>
+            <iframe ng-src="{{vm.frameLink}}" frameBorder="0" width="800" height="600"></iframe>
+        </div>
+    </body>
+</html>
