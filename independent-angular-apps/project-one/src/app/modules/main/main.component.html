@@ -1,4 +1,12 @@
 <app-header></app-header>
 <p>
-  Main page from project-one
+    Main page from project-one
 </p>
+
+<h2>Try to upload file</h2>
+<div> <input type="file" (change)="onFileChange($event)"></div>
+<div>
+    Uploading files
+
+    <div *ngFor="let file of getCurrentFiles()">{{file.key}}: {{file.progress}}</div>
+</div>

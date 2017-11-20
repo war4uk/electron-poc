@@ -1,6 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { MainComponent } from './modules/main/main.component';
 import { HeaderModule } from './modules/header/header.module';
 import { MainModule } from './modules/main/main.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
@@ -12,11 +13,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     HeaderModule,
     MainModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainComponent]
 })
 export class AppModule { }

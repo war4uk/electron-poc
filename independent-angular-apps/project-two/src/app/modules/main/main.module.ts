@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 
+import { UploadFileService } from './services/upload-file.service';
+
 const routes: Routes = [
   { path: '', component: MainComponent }
 ];
@@ -12,6 +14,7 @@ const routes: Routes = [
   imports: [
     CommonModule, RouterModule.forChild(routes)
   ],
-  declarations: [MainComponent]
+  declarations: [MainComponent],
+  providers: [UploadFileService]
 })
 export class MainModule { }
