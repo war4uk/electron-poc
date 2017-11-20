@@ -3394,14 +3394,6 @@ managers.forEach(manager => {
 });
 
 window.document.getElementById('mainWindow').src = Object.values(managers)[0].getRootUrl();
-
-
-/* var bc = new BroadcastChannel(broadcastChannelId);
-bc.close();
-bc = new BroadcastChannel(broadcastChannelId);
-bc.onmessage = function(message) {
-    console.log('Plugin manager received data from global channel: ', message.data);
-};*/
 },{"./project-one/plugin-manager.js":6,"./project-three/plugin-manager.js":8,"./project-two/plugin-manager.js":9}],5:[function(require,module,exports){
 'use strict'
 
@@ -3553,7 +3545,7 @@ let internalBroadcastChannel = new BroadcastChannel("unite:project-three:channel
 
 internalBroadcastChannel.onmessage = function onInternalBroadcastMessage() {}
 
-exports.prettyName = 'Package Three';
+exports.prettyName = "Package Three";
 
 exports.uploadBlob = function(uint8Arr, fileId) {
     console.log('project three loaded file content result: ', arrayBufferToString(uint8Arr));
@@ -3577,6 +3569,7 @@ function arrayBufferToString(buffer) {
     // extremely unefficient implementation
     return String.fromCharCode.apply(String, buffer);
 }
+
 },{}],9:[function(require,module,exports){
 let internalBroadcastChannel = new BroadcastChannel("unite:project-two:channel");
 
@@ -3589,6 +3582,7 @@ exports.run = function run(broadcastChannelId) {};
 exports.getRootUrl = function getRootUrl() {
     return './project-two/index.html';
 };
+
 },{}],10:[function(require,module,exports){
 (function(global) {
     var channels = [];
