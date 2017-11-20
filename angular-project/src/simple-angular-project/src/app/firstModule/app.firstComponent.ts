@@ -1,7 +1,6 @@
 import { BroadcastService } from './app.broadcastService';
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable } from '../../../node_modules/@angular/core';
 import ComponentLink = Model.ComponentLink;
-import { MessageBus } from '../broadcastModule/app.messageBus';
 import pluginConfiguration from './firstplugin.config.json';
 
 @Component({

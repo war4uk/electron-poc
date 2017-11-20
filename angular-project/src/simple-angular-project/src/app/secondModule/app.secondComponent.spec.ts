@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async } from '../../../node_modules/@angular/core/testing';
 import { SecondComponent } from './app.secondComponent';
 describe('SecondComponent', () => {
   beforeEach(async(() => {

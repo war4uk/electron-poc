@@ -1,7 +1,7 @@
-import { BroadcastModule } from '../broadcastModule/app.broadcastModule';
-import { MessageBus } from '../broadcastModule/app.messageBus';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injectable } from '@angular/core';
+import { BroadcastModule } from '../../../node_modules/broadcast-module';
+import { MessageBus } from '../../../node_modules/broadcast-module/app.messageBus';
+import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
+import { NgModule, Injectable } from '../../../node_modules/@angular/core';
 import pluginConfiguration from './mainplugin.config.json';
 
 

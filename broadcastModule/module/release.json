@@ -1,0 +1,23 @@
+{
+  "name": "broadcast-module",
+  "version": "1.0.0",
+  "description": "example of module which allow to send messages to other modules'",
+  "main": "bundles/broadcastModule.umd.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular 2",
+    "angular 4",
+    "angular 42"
+  ],
+  "author": "My name",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "5.0.2",
+    "@angular/common": "5.0.2",
+    "rxjs": "5.5.2",
+    "zone.js": "0.8.18"
+  }
+}

@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { BroadcastServiceBase } from '../broadcastModule/broadcastServiceBase';
+import { Injectable } from '../../../node_modules/@angular/core';
+import { BroadcastServiceBase } from '../../../node_modules/broadcast-module/broadcastServiceBase';
 
 @Injectable()
 export class BroadcastService extends BroadcastServiceBase {
     constructor() {
-        super('first-module:channel', "First module channel");
+        super('first-module:channel', 'First module channel');
     }
 
     protected onInternalMessage(message: any): void {

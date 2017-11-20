@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SafeResourceUrl } from '@angular/platform-browser/src/security/dom_sanitization_service';
+import { Component } from '../../../node_modules/@angular/core';
+import { SafeResourceUrl } from '../../../node_modules/@angular/platform-browser/src/security/dom_sanitization_service';
 
 @Component({
   selector: 'app-root',

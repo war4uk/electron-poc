@@ -1,5 +1,5 @@
-import {ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-import { NgModule } from '@angular/core';
+import {ActivatedRouteSnapshot, RouterStateSnapshot} from '../../../node_modules/@angular/router';
+import { NgModule } from '../../../node_modules/@angular/core';
 
 
 import { SecondComponent } from './app.secondComponent';
