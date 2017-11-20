@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HeaderModule} from '../header/header.module';
 
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './main.component';
 
 @NgModule({
   imports: [
@@ -10,4 +10,4 @@ import { MainComponent } from './main/main.component';
   ],
   declarations: [MainComponent]
 })
-export class PagesModule { }
+export class MainModule { }

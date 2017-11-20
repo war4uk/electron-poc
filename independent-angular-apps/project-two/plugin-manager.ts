@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from "./src/app/modules/main/main.component";
+import { MainComponent } from './src/app/modules/main/main.component';
 
 export function callAlert() {
     alert('done');
@@ -8,6 +8,6 @@ export function callAlert() {
 
 export function getRoutes(): Routes {
     return [
-        { path: 'project-one', component: MainComponent }
+        { path: 'project-two', component: MainComponent }
     ];
 }

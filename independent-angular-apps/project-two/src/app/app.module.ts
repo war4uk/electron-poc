@@ -1,5 +1,3 @@
-import { HeaderModule } from './modules/header/header.module';
-import { MainModule } from './modules/main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,9 +10,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    HeaderModule,
-    MainModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
