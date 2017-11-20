@@ -12,12 +12,10 @@ const { getRoutes: getProjectOneRoutes } = ProjectOnePluginManager;
 const { getRoutes: getProjectTwoRoutes } = ProjectTwoPluginManager;
 
 const appRoutes: Routes = [
-  ...getProjectOneRoutes(),
-  ...getProjectTwoRoutes(),
-  { path: '**', redirectTo: getProjectOneRoutes()[0].path, pathMatch: 'full' }
+  { path: 'project-one', loadChildren: './route-loaders/project-one-route-loader#ProjectOneLazyLoader' },
+  { path: 'project-two', loadChildren: './route-loaders/project-two-route-loader#ProjectTwoLazyLoader' },
+  { path: '**', component: DefaultComponent }
 ];
-
-console.log(appRoutes);
 
 @NgModule({
   declarations: [
@@ -26,12 +24,11 @@ console.log(appRoutes);
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     ),
     ProjectOneModule, ProjectTwoModule
   ],
   providers: [{ provide: APP_ROUTES, useValue: appRoutes }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppCoreModule { }
