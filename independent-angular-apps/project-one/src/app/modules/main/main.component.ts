@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { fromByteArray } from 'base64-js';
 
 @Component({
@@ -6,7 +6,7 @@ import { fromByteArray } from 'base64-js';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
   internalBroadcastChannel = null;
   currentFiles = {};
   blobSize = 1000;
@@ -26,6 +26,10 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    this.internalBroadcastChannel.close();
   }
 
   getCurrentFiles() {

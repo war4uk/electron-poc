@@ -14,6 +14,7 @@ const routes: Routes = [
   imports: [
     CommonModule, RouterModule.forChild(routes)
   ],
+  exports: [MainComponent],
   declarations: [MainComponent],
   providers: [UploadFileService]
 })

@@ -9,9 +9,8 @@ import {APP_ROUTES} from './app.routes';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(@Inject(APP_ROUTES) private routes: Routes) {
+  constructor(@Inject(APP_ROUTES) public routes: Routes) {
     console.log(routes);
-
   }
   title = 'app';
 }

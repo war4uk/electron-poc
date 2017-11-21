@@ -36,7 +36,7 @@ export class AppCoreModule {
 
   constructor() {
     ProjectOnePluginManager.initialize(ProjectTwoPluginManager);
-    
+
     this.pluginManagers.push(ProjectOnePluginManager, ProjectTwoPluginManager);
   }
 }

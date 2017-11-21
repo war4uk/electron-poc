@@ -8,8 +8,7 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "build-all": "cd ../project-one && npm run build-plugin && cd ../project-two && npm run build-plugin && cd ../core && ng serve"
+        "e2e": "ng e2e"
     },
     "private": true,
     "dependencies": {

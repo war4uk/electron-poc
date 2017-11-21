@@ -22,6 +22,8 @@ export class UploadFileService {
         const offset = this.currentFiles[id].offset || 0;
         const observable = this.currentFiles[id].observable;
 
+        console.log('reading chunk: ', offset);
+
         if (offset > file.size) {
             return;
         }
@@ -40,7 +42,6 @@ export class UploadFileService {
             setTimeout(() => {
                 console.log('waiting 2 secs before reading next chunk');
                 observable.next(endIndex);
-                this.readNextChunkFromFile(id);
             }, 2000);
         };
     }
