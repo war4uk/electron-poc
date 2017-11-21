@@ -3,6 +3,7 @@ import { MainComponent } from './modules/main/main.component';
 import { HeaderModule } from './modules/header/header.module';
 import { MainModule } from './modules/main/main.module';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    BrowserModule,
     CommonModule,
     HeaderModule,
     MainModule

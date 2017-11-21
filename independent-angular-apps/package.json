@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "run-all": "npm run build-plugins && concurrently --kill-others \"cd core && npm run start\" \"cd electron-wrapper && npm run start \" ",
-        "install-deps": "cd core && npm install && cd ../project-one && npm install && cd ../project-two && npm install && cd ../electron-wrapper && npm install && cd ..",
+        "run-all": "npm run build-plugins  && cd core && npm run build && cd .. && concurrently --kill-others \"cd core && npm run start\" \"cd electron-wrapper && npm run start \" ",
+        "install-deps": "npm install && cd core && npm install && cd ../project-one && npm install && cd ../project-two && npm install && cd ../electron-wrapper && npm install && cd ..",
         "build-plugins": "concurrently \"cd project-one && npm run build-plugin\" \"cd project-two && npm run build-plugin\""
     },
     "author": "",
