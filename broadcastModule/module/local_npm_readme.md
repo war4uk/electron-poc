@@ -1,4 +1,5 @@
 ## Creating npm module using [following tutorial](https://medium.com/@cyrilletuzi/how-to-build-and-publish-an-angular-module-7ad19c0b4464)
+and [following](https://medium.com/@ngl817/building-an-angular-4-component-library-with-the-angular-cli-and-ng-packagr-53b2ade0701e)
 Before you start do the following actions
 - Setup local-npm
 ```cmd
@@ -26,4 +27,4 @@ npm adduser --registry=http://127.0.0.1:5080
 ```
 - Then go to npmjs.com and verify your email
 
-- my user vasilyterkin password prizrak-kommunizma
+- my user vasilyterkin password prizrak-kommunizma email cujow@geronra.com

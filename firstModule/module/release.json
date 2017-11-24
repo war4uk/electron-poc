@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "example of module which can work separately'",
   "main": "bundles/firstModule.umd.js",
-  "module": "index.js",
-  "typings": "index.d.ts",
+  "module": "public_api.js",
+  "typings": "public_api.d.ts",
   "keywords": [
     "angular",
     "angular2",
@@ -14,10 +14,8 @@
   ],
   "author": "My name",
   "license": "MIT",
-  "dependencies": {
-    "broadcast-module": "1.0.0"
-  },
   "peerDependencies": {
+    "broadcast-module": "1.0.0",
     "@angular/core": "5.0.2",
     "@angular/common": "5.0.2",
     "@angular/platform-browser": "5.0.2",

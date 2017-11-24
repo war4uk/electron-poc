@@ -1,5 +1,5 @@
 import { BroadcastModule } from 'broadcast-module';
-import { FirstModule } from 'zzzz-first-module';
+import { FirstModule } from 'zzzzz-first-module';
 import { MessageBus } from 'broadcast-module/app.messageBus';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';

@@ -1,5 +1,5 @@
 export default {
-    input: "dist/index.js",
+    input: "dist/public_api.js",
     sourceMap: false,
     output: {
         format: "umd",

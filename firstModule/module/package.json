@@ -1,8 +1,8 @@
 {
-  "name": "first-module",
+  "name": "zzzzz-first-module",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "public_api.js",
   "scripts": {
     "deleteDist": "del dist",
     "transpile": "ngc",
@@ -16,8 +16,18 @@
     "packager": "ng-packagr -p ng-package.json"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "@angular/common": "5.0.2",
+    "@angular/core": "5.0.2",
+    "@angular/forms": "5.0.2",
+    "@angular/platform-browser": "5.0.2",
+    "@angular/router": "5.0.2",
+    "broadcast-module": "1.0.0",
+    "rxjs": "5.5.2",
+    "zone.js": "0.8.18"
+  },
+  "peerDependencies": {
     "@angular/common": "5.0.2",
     "@angular/core": "5.0.2",
     "@angular/forms": "5.0.2",

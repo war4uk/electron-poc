@@ -1,6 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FirstComponent } from 'zzzz-first-module/app.firstComponent';
+import { FirstComponent } from 'zzzzz-first-module/app.firstComponent';
 
 const routes: Routes = [
     {
