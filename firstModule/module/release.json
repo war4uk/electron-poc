@@ -1,0 +1,29 @@
+{
+  "name": "zzzz-first-module",
+  "version": "1.0.0",
+  "description": "example of module which can work separately'",
+  "main": "bundles/firstModule.umd.js",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular 2",
+    "angular 4",
+    "angular 42"
+  ],
+  "author": "My name",
+  "license": "MIT",
+  "dependencies": {
+    "broadcast-module": "1.0.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "5.0.2",
+    "@angular/common": "5.0.2",
+    "@angular/platform-browser": "5.0.2",
+    "@angular/router": "5.0.2",
+    "@angular/forms": "5.0.2",
+    "rxjs": "5.5.2",
+    "zone.js": "0.8.18"
+  }
+}

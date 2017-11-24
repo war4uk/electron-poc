@@ -1,0 +1,10 @@
+{
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+        "entryFile": "./index.ts",
+        "externals": {
+            "broadcast-module/app.messageBus": "broadcast-module",
+            "broadcast-module/broadcastServiceBase": "broadcast-module"
+        }
+    }
+}

@@ -1,9 +1,9 @@
-import { BroadcastModule } from '../../../node_modules/broadcast-module';
-import { MessageBus } from '../../../node_modules/broadcast-module/app.messageBus';
-import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
-import { NgModule, Injectable } from '../../../node_modules/@angular/core';
+import { BroadcastModule } from 'broadcast-module';
+import { FirstModule } from 'zzzz-first-module';
+import { MessageBus } from 'broadcast-module/app.messageBus';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, Injectable } from '@angular/core';
 import pluginConfiguration from './mainplugin.config.json';
-
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
@@ -17,6 +17,7 @@ import { BroadcastService } from './app.broadcastService';
   imports: [
     BrowserModule,
     BroadcastModule,
+    FirstModule,
     routing
   ],
   providers: [BroadcastService],

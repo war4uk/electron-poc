@@ -1,7 +1,6 @@
 import { BroadcastService } from './app.broadcastService';
-import { Component, Injectable } from '../../../node_modules/@angular/core';
-import ComponentLink = Model.ComponentLink;
-import pluginConfiguration from './firstplugin.config.json';
+import { Component, Injectable } from '@angular/core';
+import { ComponentLink } from './componentLink';
 
 @Component({
   selector: 'app-root',
@@ -42,8 +41,8 @@ export class FirstComponent {
         href: this.link,
         title: this.linkName
       });
-      this.link = null;
-      this.linkName = null;
+      this.link = "";
+      this.linkName = "";
     }
   }
 }

@@ -15,5 +15,12 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+  "include": [
+    "./src/*.ts",
+    "./src/**/*.ts",
+    "./src/*.d.ts",
+    "./src/**/*.d.ts",
+    "./node_modules/xx-first-module/*.d.ts"
+  ]
 }

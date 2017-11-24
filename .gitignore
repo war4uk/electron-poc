@@ -1,3 +1,10 @@
 node_modules/
 out/
 dist/
+_replicator/
+_users/
+binarydb/
+pouch__all_dbs__/
+skimdb/
+config.json
+log.txt

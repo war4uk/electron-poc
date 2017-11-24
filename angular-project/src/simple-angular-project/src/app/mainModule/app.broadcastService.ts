@@ -1,5 +1,5 @@
-import { Injectable } from '../../../node_modules/@angular/core';
-import { BroadcastServiceBase } from '../../../node_modules/broadcast-module/broadcastServiceBase';
+import { Injectable } from '@angular/core';
+import { BroadcastServiceBase } from 'broadcast-module/broadcastServiceBase';
 
 @Injectable()
 export class BroadcastService extends BroadcastServiceBase {

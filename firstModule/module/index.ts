@@ -1,13 +1,12 @@
 import { BroadcastService } from './app.broadcastService';
-import { NgModule, Injectable } from '../../../node_modules/@angular/core';
-import { FormsModule } from '../../../node_modules/@angular/forms';
-import { CommonModule } from '../../../node_modules/@angular/common';
+import { NgModule, Injectable } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BroadcastModule } from "broadcast-module";
+import { MessageBus } from "broadcast-module/app.messageBus"
 
 import { FirstComponent } from './app.firstComponent';
 import { firstRouting } from './app.firstRouting';
-import { BroadcastModule } from '../../../node_modules/broadcast-module';
-import { MessageBus } from '../../../node_modules/broadcast-module/app.messageBus';
-
 
 @NgModule({
   declarations: [

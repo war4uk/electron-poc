@@ -1,5 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FirstComponent } from 'zzzz-first-module/app.firstComponent';
 
 const routes: Routes = [
     {
@@ -9,16 +10,17 @@ const routes: Routes = [
     },
     {
         path: 'first',
-        loadChildren: '../firstModule/app.firstModule#FirstModule'
+        component: FirstComponent
+        // loadChildren: 'xx-first-module#FirstModule'
     },
-    {
-        path: 'second',
-        loadChildren: '../secondModule/app.secondModule#SecondModule'
-    },
-    {
-        path: 'third',
-        loadChildren: '../thirdModule/app.thirdModule#ThirdModule'
-    }
+    // {
+    //     path: 'second',
+    //     loadChildren: '../secondModule/app.secondModule#SecondModule'
+    // },
+    // {
+    //     path: 'third',
+    //     loadChildren: '../thirdModule/app.thirdModule#ThirdModule'
+    // }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
