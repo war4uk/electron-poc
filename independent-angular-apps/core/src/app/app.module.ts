@@ -1,8 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MainModule as ProjectOneModule, PluginManager as ProjectOnePluginManager } from 'project-one';
-import { MainModule as ProjectTwoModule, PluginManager as ProjectTwoPluginManager } from 'project-two';
+import { PluginManager as ProjectOnePluginManager, ServicesModule } from 'project-one';
+import { PluginManager as ProjectTwoPluginManager } from 'project-two';
 
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    ProjectOneModule, ProjectTwoModule
+    ServicesModule
   ],
   providers: [{ provide: APP_ROUTES, useValue: appRoutes }],
   bootstrap: [AppComponent]
