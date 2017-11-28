@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
+import { Logger } from './services/logger.service';
+import { ServicesModule } from './services/services.module';
 
 
 @NgModule({
@@ -17,9 +19,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CommonModule,
     HeaderModule,
-    MainModule
+    MainModule,
+    ServicesModule
   ],
-  providers: [],
   bootstrap: [MainComponent]
 })
 export class AppModule { }
