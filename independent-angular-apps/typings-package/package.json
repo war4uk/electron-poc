@@ -1,0 +1,19 @@
+{
+  "name": "typings-package",
+  "version": "0.0.0",
+  "license": "MIT",
+  "typings": "src",
+  "typescript": {
+    "definition": "src"
+  },
+  "scripts": {
+    "copy": "cpx src/*.ts dist/src && cpx *.ts dist && cpx package.json dist",
+    "build-plugin": "npm run copy && cd dist && npm pack && cd ../../core && npm install ..\\typings-package\\dist\\typings-package-0.0.0.tgz && cd ../typings-package"
+  },
+  "author": "",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "ng-packagr": "^1.6.0",
+    "typescript": "^2.6.1"
+  }
+}
