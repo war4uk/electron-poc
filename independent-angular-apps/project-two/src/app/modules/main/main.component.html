@@ -1,3 +1,17 @@
 <p>
     Main component from project-two
 </p>
+<h2>Items</h2>
+<div *ngFor="let item of Items">{{item.Name}}: {{item.ValueId}}</div>
+<h2>Values</h2>
+<div *ngFor="let itemValue of ItemValues">{{itemValue.Name}}: {{itemValue.Id}}</div>
+<h2>Selectors</h2>
+<form id="myForm" name="myForm">
+    <div *ngFor="let item of Items">
+        <label>{{item.Name}}</label>
+        <select [(ngModel)]="item.ValueId" name="{{'selectorName' + item.Id}}" id="{{'selectorName' + item.Id}}">
+            <option *ngFor="let value of ItemValues" [ngValue]="value.Id">{{value.Name}}</option>
+        </select>
+        <p>{{item.ValueId}}</p>
+    </div>
+</form>
