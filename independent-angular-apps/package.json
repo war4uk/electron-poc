@@ -6,7 +6,9 @@
     "scripts": {
         "install-builder": "npm install",
         "install-typings": "cd project-one-typings && npm install && cd ../",
-        "pack-typings": "cd project-one-typings && npm run build-plugin cd ../",
+        "pack-project-one-typings": "cd project-one-typings && npm run build-plugin cd ../",
+        "pack-project-two-typings": "cd project-two-typings && npm run build-plugin cd ../",
+        "pack-typings": "concurrently \"npm run pack-project-one-typings\" \"npm run pack-project-two-typings\"",
         "install-plugins": "concurrently \"cd project-one && npm install\" \"cd project-two && npm install\"",
         "pack-project-one": "cd project-one && npm run packagr && cd dist && npm pack && cd ../../",
         "pack-project-two": "cd project-two && npm run packagr && cd dist && npm pack && cd ../../",
