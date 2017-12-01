@@ -7,10 +7,10 @@
         "install-builder": "npm install",
         "install-typings": "cd project-one-typings && npm install && cd ../",
         "pack-typings": "cd project-one-typings && npm run build-plugin cd ../",
-        "install-plugins": "cd project-one && npm install && cd ../project-two && npm install && cd ../",
+        "install-plugins": "concurrently \"cd project-one && npm install\" \"cd project-two && npm install\"",
         "pack-project-one": "cd project-one && npm run packagr && cd dist && npm pack && cd ../../",
         "pack-project-two": "cd project-two && npm run packagr && cd dist && npm pack && cd ../../",
-        "pack-plugins": "npm run pack-project-one && npm run pack-project-two",
+        "pack-plugins": "concurrently \"npm run pack-project-one\" \"npm run pack-project-two\"",
         "install-core": "cd core && npm install",
         "install-electron": "cd electron-wrapper && npm install",
         "build-all": "npm run install-builder && npm run install-typings && npm run pack-typings && npm run install-plugins && npm run pack-plugins && npm run install-core && npm run install-electron"
