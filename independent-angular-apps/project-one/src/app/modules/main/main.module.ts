@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderModule } from '../header/header.module';
 
 import { MainComponent } from './main.component';
+import { ProjectOneComponentComponent } from './project-one-component/project-one-component.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent }
@@ -13,6 +14,7 @@ const routes: Routes = [
   imports: [
     CommonModule, HeaderModule, RouterModule.forChild(routes)
   ],
-  declarations: [MainComponent]
+  exports: [ProjectOneComponentComponent],
+  declarations: [MainComponent, ProjectOneComponentComponent]
 })
 export class MainModule { }

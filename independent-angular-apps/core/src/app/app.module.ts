@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    ProjectOneModule, ProjectTwoModule
+    ProjectTwoModule, ProjectOneModule
   ],
   providers: [{ provide: APP_ROUTES, useValue: appRoutes }],
   bootstrap: [AppComponent]
@@ -37,6 +37,6 @@ export class AppCoreModule {
   constructor() {
     ProjectOnePluginManager.initialize(ProjectTwoPluginManager);
 
-    this.pluginManagers.push(ProjectOnePluginManager, ProjectTwoPluginManager);
+    this.pluginManagers.push(ProjectTwoPluginManager, ProjectOnePluginManager);
   }
 }

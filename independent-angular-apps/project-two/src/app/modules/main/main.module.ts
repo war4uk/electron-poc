@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FakesModule } from '../fakes/fakes.module';
 import { MainComponent } from './main.component';
 
 import { UploadFileService } from './services/upload-file.service';
@@ -12,7 +13,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forChild(routes)
+    RouterModule.forChild(routes), FakesModule
   ],
   exports: [MainComponent],
   declarations: [MainComponent],
