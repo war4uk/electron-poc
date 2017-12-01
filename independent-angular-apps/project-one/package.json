@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-package.json",
-    "build-plugin": "npm run packagr && cd dist && npm pack && cd ../../core && npm install ..\\project-one\\dist\\project-one-0.0.0.tgz"
+    "build-plugin": "npm run packagr && cd dist && npm pack && cd ../",
+    "install-plugin": "cd ../core && npm install ..\\project-one\\dist\\project-one-0.0.0.tgz && cd ../project-one"
   },
   "private": true,
   "dependencies": {
