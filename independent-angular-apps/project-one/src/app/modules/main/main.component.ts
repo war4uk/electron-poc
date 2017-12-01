@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, Inject } from '@angular/core';
 import { fromByteArray } from 'base64-js';
 import { Logger } from '../../services/logger.service';
-import { LoggerService } from 'typings-package';
+import { LoggerService } from 'project-one-typings';
 
 @Component({
   selector: 'app-main',

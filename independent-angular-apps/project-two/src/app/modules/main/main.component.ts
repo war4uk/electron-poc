@@ -1,7 +1,7 @@
 import {Item} from './model/Item';
 import { Component, OnInit, Inject } from '@angular/core';
 import {ItemValue} from './model/ItemValue';
-import {LoggerService} from 'typings-package';
+import {LoggerService} from 'project-one-typings';
 
 @Component({
   selector: 'app-main',

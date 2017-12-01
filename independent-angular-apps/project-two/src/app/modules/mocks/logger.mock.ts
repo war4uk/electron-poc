@@ -1,4 +1,4 @@
-import { LoggerService } from 'typings-package';
+import { LoggerService } from 'project-one-typings';
 
 export class LoggerMock implements LoggerService {
     log(message: string): void {

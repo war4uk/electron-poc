@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { LoggerService } from 'typings-package';
+import { LoggerService } from 'project-one-typings';
 
 @Component({
   selector: 'app-root',

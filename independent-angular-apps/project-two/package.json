@@ -10,7 +10,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "packagr": "ng-packagr -p ng-package.json",
-        "build-plugin": "npm run packagr && cd dist && npm pack && cd ../../core && npm install ..\\project-two\\dist\\project-two-0.0.0.tgz"
+        "build-plugin": "npm run packagr && cd dist && npm pack"
     },
     "private": true,
     "dependencies": {
@@ -25,7 +25,7 @@
         "@angular/router": "^5.0.0",
         "core-js": "^2.4.1",
         "rxjs": "^5.5.2",
-        "typings-package": "file:../typings-package/dist/typings-package-0.0.0.tgz",
+        "project-one-typings": "file:../project-one-typings/dist/project-one-typings-0.0.0.tgz",
         "zone.js": "^0.8.14"
     },
     "devDependencies": {

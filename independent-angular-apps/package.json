@@ -4,9 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "run-all": "npm run build-plugins  && cd core && npm run build && cd .. && concurrently --kill-others \"cd core && npm run start\" \"cd electron-wrapper && npm run start \" ",
-        "install-deps": "npm install && cd core && npm install && cd ../project-one && npm install && cd ../project-two && npm install && cd ../electron-wrapper && npm install && cd ..",
-        "build-plugins": "concurrently \"cd project-one && npm run build-plugin\" \"cd project-two && npm run build-plugin\""
+        "install-builder": "npm install",
+        "install-typings": "cd project-one-typings && npm install && cd ../",
+        "pack-typings": "cd project-one-typings && npm run build-plugin cd ../",
+        "install-plugins": "cd project-one && npm install && cd ../project-two && npm install && cd ../",
+        "pack-project-one": "cd project-one && npm run packagr && cd dist && npm pack && cd ../../",
+        "pack-project-two": "cd project-two && npm run packagr && cd dist && npm pack && cd ../../",
+        "pack-plugins": "npm run pack-project-one && npm run pack-project-two",
+        "install-core": "cd core && npm install",
+        "install-electron": "cd electron-wrapper && npm install",
+        "build-all": "npm run install-builder && npm run install-typings && npm run pack-typings && npm run install-plugins && npm run pack-plugins && npm run install-core && npm run install-electron"
     },
     "author": "",
     "license": "ISC",

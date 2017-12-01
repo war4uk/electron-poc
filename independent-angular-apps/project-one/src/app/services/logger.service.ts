@@ -1,4 +1,4 @@
-import { LoggerService } from 'typings-package';
+import { LoggerService } from 'project-one-typings';
 
 export class Logger implements LoggerService {
     public log(message: string): void {
