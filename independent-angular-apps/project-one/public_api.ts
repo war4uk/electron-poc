@@ -1,5 +1,3 @@
 export * from './src/app/modules/main/main.module';
-
-import * as PluginManagerImpl from './plugin-manager';
-
-export const PluginManager = PluginManagerImpl;
+export * from './src/app/services/services.module';
+export * from './plugin-manager';

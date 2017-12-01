@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { MainModule } from './modules/main/main.module';
 
 import { AppComponent } from './app.component';
+import {LoggerMock} from './modules/mocks/logger.mock';
 
 
 @NgModule({
@@ -13,7 +14,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule, MainModule
   ],
-  providers: [],
+  providers: [{
+    provide: 'LoggerService',
+    useClass: LoggerMock
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
