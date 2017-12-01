@@ -1,10 +1,11 @@
+import {LoggerMock} from '../mocks/logger.mock';
+import {ServicesModule} from '../externalServices/services.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MainModule } from './modules/main/main.module';
 
 import { AppComponent } from './app.component';
-import {LoggerMock} from './modules/mocks/logger.mock';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import {LoggerMock} from './modules/mocks/logger.mock';
     AppComponent
   ],
   imports: [
-    BrowserModule, MainModule
+    BrowserModule, MainModule, ServicesModule
   ],
   providers: [{
     provide: 'LoggerService',

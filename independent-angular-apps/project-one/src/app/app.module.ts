@@ -1,3 +1,4 @@
+import {FileUploadServiceMock} from './mocks/fileUploadServiceMock';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './modules/main/main.component';
 import { HeaderModule } from './modules/header/header.module';
@@ -7,8 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
-import { Logger } from './services/logger.service';
-import { ServicesModule } from './services/services.module';
+import { ServicesModule } from './../externalServices/services.module';
 
 
 @NgModule({
@@ -19,9 +19,13 @@ import { ServicesModule } from './services/services.module';
     BrowserModule,
     CommonModule,
     HeaderModule,
-    MainModule,
-    ServicesModule
+    ServicesModule,
+    MainModule
   ],
+  providers: [{
+    provide: 'FileUploadService',
+    useClass: FileUploadServiceMock
+  }],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

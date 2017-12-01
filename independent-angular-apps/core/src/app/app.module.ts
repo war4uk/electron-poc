@@ -1,15 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { PluginManager as ProjectOnePluginManager, ServicesModule } from 'project-one';
-import { PluginManager as ProjectTwoPluginManager } from 'project-two';
+import { ServicesModule as ProjectOneServices } from 'project-one';
+import { ServicesModule as ProjectTwoServices } from 'project-two';
 
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { DefaultComponent } from './default/default.component';
-
-const { getRoutes: getProjectOneRoutes } = ProjectOnePluginManager;
-const { getRoutes: getProjectTwoRoutes } = ProjectTwoPluginManager;
 
 const appRoutes: Routes = [
   { path: 'project-one', loadChildren: './route-loaders/project-one-route-loader#ProjectOneLazyLoader' },
@@ -26,17 +23,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    ServicesModule
+    ProjectOneServices,
+    ProjectTwoServices
   ],
   providers: [{ provide: APP_ROUTES, useValue: appRoutes }],
   bootstrap: [AppComponent]
 })
-export class AppCoreModule {
-  pluginManagers = [];
-
-  constructor() {
-    ProjectOnePluginManager.initialize(ProjectTwoPluginManager);
-
-    this.pluginManagers.push(ProjectOnePluginManager, ProjectTwoPluginManager);
-  }
-}
+export class AppCoreModule {}

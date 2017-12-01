@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, Inject } from '@angular/core';
 import { fromByteArray } from 'base64-js';
-import { Logger } from '../../services/logger.service';
 import { LoggerService } from 'project-one-typings';
+import {FileUploadServiceProxy} from '../services/fileUploadServiceProxy';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +13,10 @@ export class MainComponent implements OnInit, OnDestroy {
   currentFiles = {};
   blobSize = 1000;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, @Inject('LoggerService') logger: LoggerService) {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private readonly fileUploadService: FileUploadServiceProxy,
+    @Inject('LoggerService') logger: LoggerService) {
     logger.log('Logger works in project one!!!');
     this.internalBroadcastChannel = new (<any>window).BroadcastChannel('files:channelId');
     this.internalBroadcastChannel.postMessage('Hello from project one');
@@ -42,9 +45,9 @@ export class MainComponent implements OnInit, OnDestroy {
   onFileChange(event) {
     if (event.target.files && event.target.files.length > 0) {
       const file = event.target.files[0];
+      const innerId = Math.floor(Math.random() * 10000);
 
-      file.innerId = Math.floor(Math.random() * 10000);
-
+      this.fileUploadService.startUploadingFile(file, innerId);
       this.internalBroadcastChannel.postMessage({ type: 'file:upload:selected', file });
     }
   }
