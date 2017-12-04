@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "install-builder": "npm install",
-        "install-typings": "cd project-one-typings && npm install && cd ../",
+        "install-typings": "concurrently \"cd project-one-typings && npm install\" \"cd project-two-typings && npm install\"",
         "pack-project-one-typings": "cd project-one-typings && npm run build-plugin cd ../",
         "pack-project-two-typings": "cd project-two-typings && npm run build-plugin cd ../",
         "pack-typings": "concurrently \"npm run pack-project-one-typings\" \"npm run pack-project-two-typings\"",
