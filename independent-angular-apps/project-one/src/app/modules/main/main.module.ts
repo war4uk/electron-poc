@@ -1,6 +1,7 @@
 import {FileUploadServiceProxy} from '../services/fileUploadServiceProxy';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderModule } from '../header/header.module';
 
@@ -12,7 +13,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, HeaderModule, RouterModule.forChild(routes)
+    CommonModule, HeaderModule, FormsModule, RouterModule.forChild(routes)
   ],
   providers: [FileUploadServiceProxy],
   declarations: [MainComponent]

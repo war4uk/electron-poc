@@ -11,9 +11,15 @@
     "build-plugin": "npm run copy && cd dist && npm pack"
   },
   "author": "",
+  "peerDependencies": {
+    "rxjs": "^5.5.2"
+  },
   "devDependencies": {
     "cpx": "^1.5.0",
     "ng-packagr": "^1.6.0",
     "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.2"
   }
 }

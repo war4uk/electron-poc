@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, Inject } from '@angular/core';
 import { fromByteArray } from 'base64-js';
-import { LoggerService } from 'project-one-typings';
+import { LoggerService, CallService } from 'project-one-typings';
 import {FileUploadServiceProxy} from '../services/fileUploadServiceProxy';
 
 @Component({
@@ -9,15 +9,22 @@ import {FileUploadServiceProxy} from '../services/fileUploadServiceProxy';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit, OnDestroy {
-  internalBroadcastChannel = null;
-  currentFiles = {};
-  blobSize = 1000;
+  private internalBroadcastChannel = null;
+  private currentFiles = {};
+  private blobSize = 1000;
+
+  public callNumber: number;
+  public onCall: boolean;
 
   constructor(
-    private changeDetectorRef: ChangeDetectorRef,
+    private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly fileUploadService: FileUploadServiceProxy,
-    @Inject('LoggerService') logger: LoggerService) {
-    logger.log('Logger works in project one!!!');
+    @Inject('LoggerService') private readonly logger: LoggerService,
+    @Inject('CallService') private readonly callService: CallService) {
+  }
+
+  public ngOnInit(): void {
+    this.logger.log('Logger works in project one!!!');
     this.internalBroadcastChannel = new (<any>window).BroadcastChannel('files:channelId');
     this.internalBroadcastChannel.postMessage('Hello from project one');
 
@@ -29,16 +36,28 @@ export class MainComponent implements OnInit, OnDestroy {
         this.changeDetectorRef.detectChanges();
       }
     };
+
+    this.callService.onDialogStarted().subscribe((callNumber: number) => {
+      this.onCall = true;
+    });
+    this.callService.onDialogFinished().subscribe(() => {
+      this.onCall = false;
+    });
   }
 
-  ngOnInit() {
+  public makeCall(): void {
+    this.callService.startCall(this.callNumber);
   }
 
-  ngOnDestroy() {
+  public dropCall(): void {
+    this.callService.endCall();
+  }
+
+  public ngOnDestroy(): void {
     this.internalBroadcastChannel.close();
   }
 
-  getCurrentFiles() {
+  public getCurrentFiles(): ReadonlyArray<any> {
     return Object.keys(this.currentFiles).map(key => ({ key, progress: this.currentFiles[key] }));
   }
 

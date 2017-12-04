@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Logger} from './logger.service';
+import {CallServiceImpl} from './call.service';
 
 @NgModule({
     declarations: [],
@@ -7,6 +8,9 @@ import {Logger} from './logger.service';
     providers: [{
       provide: 'LoggerService',
       useClass: Logger
+    }, {
+      provide: 'CallService',
+      useClass: CallServiceImpl
     }]
   })
   export class ServicesModule { }

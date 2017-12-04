@@ -7,6 +7,7 @@ import { ServicesModule as ProjectTwoServices } from 'project-two';
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { DefaultComponent } from './default/default.component';
+import {CallProxyService} from './services/callProxy.service';
 
 const appRoutes: Routes = [
   { path: 'project-one', loadChildren: './route-loaders/project-one-route-loader#ProjectOneLazyLoader' },
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
     ProjectOneServices,
     ProjectTwoServices
   ],
-  providers: [{ provide: APP_ROUTES, useValue: appRoutes }],
+  providers: [{ provide: APP_ROUTES, useValue: appRoutes }, CallProxyService],
   bootstrap: [AppComponent]
 })
 export class AppCoreModule {}

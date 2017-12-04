@@ -2,7 +2,12 @@
 <p>
     Main page from project-one
 </p>
-
+<h2>Try call to number</h2>
+<div>
+    <input type="number" [(ngModel)]="callNumber" />
+    <button (click)="makeCall()" *ngIf="!onCall; else elseBlock">Call</button>
+    <button (click)="dropCall()" *ngIf="onCall; else elseBlock">Drop</button>
+</div>
 <h2>Try to upload file</h2>
 <div> <input type="file" (change)="onFileChange($event)"></div>
 <div>
