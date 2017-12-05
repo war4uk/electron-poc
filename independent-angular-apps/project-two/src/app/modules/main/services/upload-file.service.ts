@@ -17,7 +17,7 @@ export class UploadFileService {
     }
 
 
-    readNextChunkFromFile(id) {
+    private readNextChunkFromFile(id) {
         const file = this.currentFiles[id].file;
         const offset = this.currentFiles[id].offset || 0;
         const observable = this.currentFiles[id].observable;

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { MainModule } from 'project-one';
+import { MainModule, PluginManager } from 'project-one';
+
+import { pluginManagers } from './plugin-managers';
 
 @NgModule({
   imports: [
     MainModule
-  ]
+  ],
+  providers: PluginManager.getProviders(pluginManagers)
 })
-export class ProjectOneLazyLoader {}
+export class ProjectOneLazyLoader { }

@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './modules/main/main.component';
-import { HeaderModule } from './modules/header/header.module';
 import { MainModule } from './modules/main/main.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { getProviders } from '../../plugin-manager';
 
 
 import { AppComponent } from './app.component';
@@ -16,10 +17,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    HeaderModule,
     MainModule
   ],
-  providers: [],
+  providers: getProviders({ files: {/*files plugin mock*/ } }),
+
   bootstrap: [MainComponent]
 })
 export class AppModule { }
