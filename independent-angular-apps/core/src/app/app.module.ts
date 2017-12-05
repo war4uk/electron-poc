@@ -8,6 +8,7 @@ import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { DefaultComponent } from './default/default.component';
 import {CallProxyService} from './services/callProxy.service';
+import {NotificationsComponent} from './notification-area/notifications.component';
 
 const appRoutes: Routes = [
   { path: 'project-one', loadChildren: './route-loaders/project-one-route-loader#ProjectOneLazyLoader' },
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, DefaultComponent
+    AppComponent, NotificationsComponent, DefaultComponent
   ],
   imports: [
     BrowserModule,
