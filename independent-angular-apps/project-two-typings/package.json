@@ -7,8 +7,9 @@
     "definition": "src"
   },
   "scripts": {
-    "copy": "cpx src/*.ts dist/src && cpx *.ts dist && cpx package.json dist",
-    "build-plugin": "npm run copy && cd dist && npm pack"
+    "compile": "tsc",
+    "copy": "cpx src/*.d.ts dist/src && cpx package.json dist",
+    "build-plugin": "npm run compile && npm run copy && cd dist && npm pack"
   },
   "author": "",
   "peerDependencies": {
@@ -19,6 +20,7 @@
     "typescript": "^2.6.1"
   },
   "dependencies": {
+    "@angular/core": "^5.0.0",
     "rxjs": "^5.5.2"
   }
 }

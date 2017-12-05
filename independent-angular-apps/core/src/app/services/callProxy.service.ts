@@ -1,12 +1,12 @@
 import { Observable } from 'rxjs/Observable';
 import { Inject, Injectable } from '@angular/core';
-import { CallService, LoggerService } from 'project-one-typings';
+import { CallService, LoggerService, LOGGER_SERVICE, CALL_SERVICE } from 'project-one-typings';
 
 @Injectable()
 export class CallProxyService {
     constructor(
-        @Inject('LoggerService') private readonly logger: LoggerService,
-        @Inject('CallService') private readonly callService: CallService) { }
+        @Inject(LOGGER_SERVICE) private readonly logger: LoggerService,
+        @Inject(CALL_SERVICE) private readonly callService: CallService) { }
 
     public onDialogStarted(): Observable<number> {
         this.logger.log('Call start subscription via proxy service');

@@ -1,15 +1,16 @@
 import {NgModule} from '@angular/core';
 import {Logger} from './logger.service';
 import {CallServiceImpl} from './call.service';
+import {CALL_SERVICE, LOGGER_SERVICE} from 'project-one-typings';
 
 @NgModule({
     declarations: [],
     imports: [],
     providers: [{
-      provide: 'LoggerService',
+      provide: LOGGER_SERVICE,
       useClass: Logger
     }, {
-      provide: 'CallService',
+      provide: CALL_SERVICE,
       useClass: CallServiceImpl
     }]
   })

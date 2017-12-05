@@ -1,4 +1,4 @@
-import { FileUploadService } from 'project-two-typings';
+import { FileUploadService, FILE_UPLOAD_SERVICE } from 'project-two-typings';
 import {Inject, Injectable} from '@angular/core';
 
 @Injectable()
@@ -6,7 +6,7 @@ export class FileUploadServiceProxy {
     private readonly internalBroadcastChannel = new (<any>window).BroadcastChannel('files:channelId');
 
     constructor(
-        @Inject('FileUploadService') private readonly fileUploadService: FileUploadService
+        @Inject(FILE_UPLOAD_SERVICE) private readonly fileUploadService: FileUploadService
     ) {}
 
     public startUploadingFile(file: File, id: number): void {

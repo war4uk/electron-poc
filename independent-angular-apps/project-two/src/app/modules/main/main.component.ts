@@ -1,7 +1,7 @@
 import {Item} from './model/Item';
 import { Component, OnInit, Inject } from '@angular/core';
 import {ItemValue} from './model/ItemValue';
-import {LoggerService} from 'project-one-typings';
+import {LoggerService, LOGGER_SERVICE} from 'project-one-typings';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   public Items: ReadonlyArray<Item>;
   public ItemValues: ReadonlyArray<ItemValue>;
 
-  constructor(@Inject('LoggerService') private readonly logger: LoggerService) { }
+  constructor(@Inject(LOGGER_SERVICE) private readonly logger: LoggerService) { }
 
   ngOnInit() {
     this.logger.log('Logger works in project two!!!');

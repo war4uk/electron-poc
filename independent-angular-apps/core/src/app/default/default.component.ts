@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {LoggerService} from 'project-one-typings';
+import {LoggerService, LOGGER_SERVICE} from 'project-one-typings';
 
 @Component({
   selector: 'app-default',
@@ -8,7 +8,7 @@ import {LoggerService} from 'project-one-typings';
 })
 export class DefaultComponent implements OnInit {
 
-  constructor(@Inject('LoggerService') private readonly logger: LoggerService) { }
+  constructor(@Inject(LOGGER_SERVICE) private readonly logger: LoggerService) { }
 
   ngOnInit() {
     this.logger.log('Logger works in core module');

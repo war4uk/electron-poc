@@ -5,6 +5,7 @@ import { HeaderModule } from './modules/header/header.module';
 import { MainModule } from './modules/main/main.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FILE_UPLOAD_SERVICE } from 'project-two-typings';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,7 @@ import { ServicesModule } from './../externalServices/services.module';
     MainModule
   ],
   providers: [{
-    provide: 'FileUploadService',
+    provide: FILE_UPLOAD_SERVICE,
     useClass: FileUploadServiceMock
   }],
   bootstrap: [MainComponent]

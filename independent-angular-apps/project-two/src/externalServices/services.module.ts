@@ -1,11 +1,12 @@
 import {NgModule} from '@angular/core';
 import {FileUpload} from './fileUpload';
+import {FILE_UPLOAD_SERVICE} from 'project-two-typings';
 
 @NgModule({
     declarations: [],
     imports: [],
     providers: [{
-      provide: 'FileUploadService',
+      provide: FILE_UPLOAD_SERVICE,
       useClass: FileUpload
     }]
   })

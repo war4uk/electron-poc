@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, Inject } from '@angular/core';
 import { fromByteArray } from 'base64-js';
-import { LoggerService, CallService } from 'project-one-typings';
+import { LoggerService, CallService, CALL_SERVICE, LOGGER_SERVICE } from 'project-one-typings';
 import {FileUploadServiceProxy} from '../services/fileUploadServiceProxy';
 
 @Component({
@@ -19,8 +19,8 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly fileUploadService: FileUploadServiceProxy,
-    @Inject('LoggerService') private readonly logger: LoggerService,
-    @Inject('CallService') private readonly callService: CallService) {
+    @Inject(LOGGER_SERVICE) private readonly logger: LoggerService,
+    @Inject(CALL_SERVICE) private readonly callService: CallService) {
   }
 
   public ngOnInit(): void {
