@@ -8,9 +8,12 @@ export function getRoutes(): Routes {
     ];
 }
 
-export function getProviders({ files }) {
+export function getProviders({ files }: { files: TypesFromTypings }) {
     return [
-        { provide: UploadFileService, useValue: UploadFileService.forPlugins(files) } // todo
+        { provide: UploadFileService, useValue: initialize(files) } // todo
     ];
 }
 
+export uploadFile(file) {
+    getInstance().method();
+}

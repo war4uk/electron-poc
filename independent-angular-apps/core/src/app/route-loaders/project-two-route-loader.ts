@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MainModule, PluginManager } from 'project-two';
 
-import { pluginManagers } from './plugin-managers';
+import { pluginManagers } from './public_plugin_interfaces';
 
 @NgModule({
   imports: [
